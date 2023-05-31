@@ -1,13 +1,15 @@
 <head>
-    <title>OMIGA主页</title>
+    <title>OMIGA</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <h1>欢迎来到OMIGA主页</h1>
-
-<p>若想学习OMIGA语言，请访问：omiga.org/lessons</p>
-<p>请访问：omiga.org/uploads 以添加OMIGA单词，为OMIGA增添一份力量</p>
-<p>在omiga.org/words搜索OMIGA语言单词</p>
+<img src="{{ url_for('static', filename='omiga.png') }}"
+    class="image"/>
+<p>若想学习OMIGA语言，请访问：<a href="/lessons">omiga.org/lessons</a></p>
+<p>请访问：<a href="/uploads">omiga.org/uploads</a> 以添加OMIGA单词，为OMIGA增添一份力量</p>
+<p>在<a href="/words">omiga.org/words</a>搜索OMIGA语言单词</p>
 <br>
 <br>
 <br>
-<p>最后更新时间：2023/5/24</p>
+<p>最后更新时间：2023/5/31</p>
 <p>源代码：https://github.com/fanfansmilkyway/OMIGA-code</p>
