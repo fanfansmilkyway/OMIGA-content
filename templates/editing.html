@@ -1,0 +1,11 @@
+<head>
+    <title>编辑单词</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<h2>你正在编辑：{{word}} 中</h2>
+<form method="POST">
+    <textarea id="content" name="content" rows="15" cols="100">{{content}}</textarea>
+    <br>
+    <input type="submit" name="submit_button" value="完成">
+</form>
