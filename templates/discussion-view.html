@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>论坛</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        .information {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 10px;
+        }
+        .auto-wrap {
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<h1>{{title}}</h1>
+<div class="auto-wrap">
+    {{content | safe}}
+</div>
+<div class="information">User: {{user}}<br>Created Time: {{time}}<br>Id: {{id}}</div>

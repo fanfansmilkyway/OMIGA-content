@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+{% extends "user-info-show-in-every-page.html"%}
+{% block content %}
 <head>
     <title>登录</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -11,8 +14,10 @@
     <p>输入你的密码</p>
     <input name="password" id="password">
     <br>
-    <input type="submit" value="Complete">
+    <input type="submit" name="submit_button" value="Complete">
     <br>
     <br>
-    <p>如果你没有账号，访问/sign_up去创建一个！</p>
+    <p>如果你没有账号，访问<a href="/sign_up">omiga.org/sign_up</a>去创建一个！</p>
+    <p>退出此账号--> <input type="submit" name="submit_button" value="退出账号"></p>
 </form>
+{% endblock %}

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends "user-info-show-in-every-page.html"%}
+{% block content %}
 <html>
 <head>
     <script src="https://kit.fontawesome.com/5336ca7942.js" crossorigin="anonymous"></script>
@@ -80,7 +82,6 @@
             box-sizing: border-box;
             text-align: center;
         }
-        /* */
 
     </style>
     <title>OMIGA</title>
@@ -126,6 +127,13 @@
             <p>修改已有的OMIGA单词，戳此</p>
         </div>
     </div>
+
+    <div class="box" onclick="navigateToLink('/discussion')">
+        <div class="box-image" style="background-image: url({{ url_for ('static', filename = 'img/discussion.png') }})"></div>
+        <div class="text">
+            <p>与其他人一起参与讨论，戳此</p>
+        </div>
+    </div>
 </div>
 <br>
 <script>
@@ -139,11 +147,23 @@
 <p>请访问：<a href="/uploads">omiga.org/uploads</a> 以添加OMIGA单词，为OMIGA增添一份力量</p>
 <p>若需要修改已有的OMIGA单词，请访问：<a href="/edit">omiga.org/edit</a></p>
 <p>在<a href="/words">omiga.org/words</a>搜索OMIGA语言单词</p>
+<p>在<a href="/discussion">omiga.org/discussion</a>论坛与其他人分享交流</p>
 <br>
 <br>
 <br>
-<p>最后更新时间：2023/8/27</p>
-<p>版本：BETA2.3</p>
-<p>源代码：https://github.com/fanfansmilkyway/OMIGA-code</p>
+<p>最后更新时间：2023/9/2</p>
+<p>版本：BETA3.0</p>
+<p>源代码：<a href="https://github.com/fanfansmilkyway/OMIGA-code">https://github.com/fanfansmilkyway/OMIGA-code</a></p>
 </body>
+<!--
+   ___  __  __ ___ ____    _            
+  / _ \|  \/  |_ _/ ___|  / \     
+ | | | | |\/| || | |  _  / _ \      Version: BETA3.0
+ | |_| | |  | || | |_| |/ ___ \     Contributor: Fanfansmilyway, Fkpwolf
+  \___/|_|  |_|___\____/_/   \_\    Date: 2023/9/2
+  Opening Mysteries, Initiating Grand Adventures.
+  Our Magical Invention Guides Ambition.
+  Opening Minds Ignites Great Adventures.
+-->
 </html>
+{% endblock %}

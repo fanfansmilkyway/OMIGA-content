@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+{% extends "user-info-show-in-every-page.html"%}
+{% block content %}
+<head>
+    <title>论坛</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+<h1>在此创作一篇文章</h1>
+<form method="POST">
+    <p>文章的题目?</p>
+    <input id="title" name="title">
+    <br>
+    <br>
+    <p>文章的内容?</p>
+    <textarea id="content" name="content" rows="15" cols="100"></textarea>
+    <br>
+    <input type="submit" name="submit_button" value="完成">
+</form>
+</body>
+</html>
+{% endblock %}
