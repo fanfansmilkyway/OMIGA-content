@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+{% extends "user-info-show-in-every-page.html"%}
+{% block content %}
+
 <head>
     <title>论坛</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -9,13 +12,63 @@
             left: 0;
             padding: 10px;
         }
-        .auto-wrap {
-            word-wrap: break-word;
+
+        .formatted-text {
+            /* A unsolved problem here!!! */
+            white-space: pre-line;
+        }
+
+        .box {
+            width: 100%;
+            height: 100% + 50px;
+            border: 1px solid #000;
+            position: relative;
+        }
+
+        .box-information {
+            opacity: 0.5;
         }
     </style>
 </head>
-<h1>{{title}}</h1>
-<div class="auto-wrap">
-    {{content | safe}}
-</div>
-<div class="information">User: {{user}}<br>Created Time: {{time}}<br>Id: {{id}}</div>
+
+<body>
+    <h1>{{title}}</h1>
+    <div class="formatted-text">
+        {{content}}
+    </div>
+    <p style="color:red;">
+        <------------讨论区------------>
+    </p>
+    <ul>
+        {% for comment, time, user in comments %}
+        <div class="box">
+            <div style="text-overflow: ellipsis;overflow: hidden;">{{comment}}</div><br>
+            <div class="box-information">
+                <div class="topic-time">{{time}}</div>用户:{{user}}
+            </div>
+        </div>
+
+        {% endfor %}
+    </ul>
+    <script>
+        function navigateToLink(url) {
+            window.location.href = url;
+        }
+        function changeTime(str) {
+            var topicTimeDivs = document.querySelectorAll(".topic-time");
+            for (var i = 0; i < topicTimeDivs.length; i++) {
+                console.log(topicTimeDivs[i].textContent)
+                topicTimeDivs[i].textContent = new Date(topicTimeDivs[i].textContent).toLocaleString('zh-CN', { timeZone: "Asia/Shanghai" });
+            }
+        }
+
+        window.onload = changeTime;
+    </script>
+    <form method="POST">
+        <p>添加一个评论参加讨论吧!</p>
+        <textarea id="comment" name="comment" rows="15" cols="100"></textarea>
+        <br>
+        <input type="submit" name="submit_button" value="完成">
+    </form>
+</body>
+{% endblock %}

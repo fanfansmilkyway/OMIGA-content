@@ -2,12 +2,13 @@
 {% extends "user-info-show-in-every-page.html"%}
 {% block content %}
 <html>
+
 <head>
     <title>论坛</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <style>
         .box {
-            width: 300px;
+            width: 100%;
             height: 100px;
             display: flex;
             border: 1px solid #000;
@@ -18,34 +19,51 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            padding: 10px;
+            padding: 0px;
         }
 
         .box:hover {
             border: 1px solid red;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
         }
-
     </style>
 </head>
 
 <body>
-<h1>欢迎来到OMIGA论坛</h1>
-<form method="POST">
-    <input type="submit" name="submit_button" value="创作一篇文章">
-</form>
-<ul>
-    {% for id, title, time, user in my_list %}
-      <div class="box" onclick="navigateToLink('/discussion/view/{{id}}')"><div style="font-size: 22px; display:flex;">{{title}}</div><div class="information">时间:{{time}}<br>用户:{{user}}</div></div>
-    {% endfor %}
-</ul>
+    <h1>欢迎来到OMIGA论坛</h1>
+    <form method="POST">
+        <input type="submit" name="submit_button" value="创作一篇文章">
+    </form>
+    <ul>
+        {% for id, title, time, user in my_list %}
+        <script>
+            console.log("Time: ", "{{time}}")
+        </script>
+        <div class="box" onclick="navigateToLink('/discussion/view/{{id}}')">
+            <div style="font-size: 22px; display:block;">{{title}}</div><br>
+            <div class="information">
+                时间:<div class="topic-time">{{time}}</div>用户:{{user}}
+            </div>
+        </div>
+        {% endfor %}
+    </ul>
 
-<script>
-    function navigateToLink(url) {
-      window.location.href = url;
-    }
-</script>
+    <script>
+        function navigateToLink(url) {
+            window.location.href = url;
+        }
+        function changeTime(str) {
+            var topicTimeDivs = document.querySelectorAll(".topic-time");
+            for (var i = 0; i < topicTimeDivs.length; i++) {
+                console.log(topicTimeDivs[i].textContent)
+                topicTimeDivs[i].textContent = new Date(topicTimeDivs[i].textContent).toLocaleString('zh-CN', { timeZone : "Asia/Shanghai"});
+            }
+        }
+
+        window.onload = changeTime;
+    </script>
 
 </body>
+
 </html>
 {% endblock %}

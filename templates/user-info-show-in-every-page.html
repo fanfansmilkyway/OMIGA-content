@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
+  <style>
     .right-top {
-    position: absolute;
-    top: 0;
-    right: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
     }
-</style>
+  </style>
 </head>
+
 <body>
 
-<div class="header">
-  <div class="right-top">
-    {% if username == "Guest" %}
-        <form method="POST">
-            <p>你在以访客身份登录: <input type="submit" name="submit_button" value="登录"></p>
-        </form>
-    {% else %}
-        <p>现在正以{{ username }}身份登录</p>
-    {% endif %}
-  </div>
-</div>
+  <div class="header">
+    <dizv class="right-top">
+      {% if username == "Guest" %}
+      <form method="POST">
+        <p>你在以访客身份登录: <input type="submit" name="submit_button" value="登录"></p>
+      </form>
+      {% else %}
+      <p>现在正以 {{ username }} 身份登录</p>
+      {% endif %}
+    </div>
 
-<div class="content">
-  {% block content %}{% endblock %}
-</div>
+  </div>
+
+  <div class="content">
+    {% block content %}{% endblock %}
+  </div>
 
 </body>
+
 </html>
