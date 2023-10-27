@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends "user-info-show-in-every-page.html"%}
+{% block content %}
 <head>
     <title>查询单词</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -14,3 +16,4 @@
 </form>
 <br>
 <p>什么是查找单词的解释？比如字典中有一个单词a，它的解释是"1.开心, 2.你好"，当你使用“查找单词的解释”功能时，查找“开心”时系统就会返回a这个单词</p>
+{% endblock %}

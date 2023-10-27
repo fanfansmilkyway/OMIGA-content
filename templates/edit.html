@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends "user-info-show-in-every-page.html"%}
+{% block content %}
 <head>
     <title>编辑单词</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -9,4 +11,6 @@
 <form method="POST">
     <p>你要编辑什么单词？</p>
     <input id="word" name="word">
+    <input name="submit_button" type="submit" value="编辑">
 </form>
+{% endblock %}

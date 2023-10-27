@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-
+{% extends "user-info-show-in-every-page.html"%}
+{% block content %}
 <head>
     <title>OMIGA文章阅读</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -18,3 +19,4 @@
         <br>
         <input type="submit" name="submit_button" value="HUNTERxHUNTER Departure OP 全职猎人 Departure 主题曲">
 </form>
+{% endblock %}

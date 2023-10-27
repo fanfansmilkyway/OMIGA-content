@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends "user-info-show-in-every-page.html"%}
+{% block content %}
 <head>
     <title>用户页面</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -13,3 +15,4 @@
     <br>
     <p>如果你想换一个账号，请访问<a href="/sign_in">omiga.org/sign_in</a></p>
 </form>
+{% endblock %}

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends "user-info-show-in-every-page.html"%}
+{% block content %}
 <head>
     <title>课程</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -19,3 +21,4 @@
 </form>
 
 <p>这里所有的课程皆又fanfansmilkyway纂写，帮助OMIGA语言初学者升至中高级的水平，里面可能会有一些错误，但是我们会不停的修正这些错误。而且这些课程fanfansmilkyway仍在在连载中，一定会提供更多的课程资料，如果课程中有不懂的地方，欢迎发email到fanfansmilkyway@qq.com</p>
+{% endblock %}

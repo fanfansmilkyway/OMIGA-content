@@ -2,11 +2,30 @@
 <html>
 
 <head>
+  <script src="https://kit.fontawesome.com/5336ca7942.js" crossorigin="anonymous"></script>
+
   <style>
     .right-top {
       position: absolute;
       top: 0;
       right: 0;
+    }
+
+    .container-top a:link,
+    .container-top a:visited {
+      background-color: white;
+      color: black;
+      border: 2px solid green;
+      padding: 5px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .container-top a:hover,
+    .container-top a:active {
+      background-color: green;
+      color: white;
     }
   </style>
 </head>
@@ -14,7 +33,16 @@
 <body>
 
   <div class="header">
-    <dizv class="right-top">
+    <div class="container-top">
+      <a href="/"><i class="fa-solid fa-house" style="color:#1d3a6d;"></i> 首页</a> 
+      <a href="/lessons"><i class="fa-solid fa-graduation-cap" style="color:#1d3a6d;"></i> 课程</a> 
+      <a href="/passages"><i class="fa-solid fa-book-open-reader" style="color: #1d3a6d;"></i> 文章</a> 
+      <a href="/words"><i class="fa-solid fa-book-bookmark" style="color: #1d3a6d"></i> 查找单词</a>
+      <a href="/uploads"><i class="fa-solid fa-arrow-up-from-bracket" style="color: #1d3a6d"></i> 上传单词</a>
+      <a href="/edit"><i class="fa-solid fa-marker" style="color: #1d3a6d"></i> 修改单词</a> 
+      <a href="/discussion"><i class="fa-solid fa-comments" style="color: #1d3a6d"></i> 论坛</a>
+    </div>
+    <div class="right-top">
       {% if username == "Guest" %}
       <form method="POST">
         <p>你在以访客身份登录: <input type="submit" name="submit_button" value="登录"></p>

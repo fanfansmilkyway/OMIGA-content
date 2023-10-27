@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends "user-info-show-in-every-page.html"%}
+{% block content %}
 <head>
     <title>查询单词</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -8,3 +10,4 @@
     <input name="word">
     <input type="submit">
 </form>
+{% endblock %}

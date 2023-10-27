@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends "user-info-show-in-every-page.html"%}
+{% block content %}
 <head>
     <title>查询单词</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -11,3 +13,4 @@
 <br>
 <br>
 <p>(查询可能不准确，请见谅)</p>
+{% endblock %}
