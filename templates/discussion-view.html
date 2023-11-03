@@ -35,9 +35,7 @@
     <div class="formatted-text">
         {{content}}
     </div>
-    <p style="color:red;">
-        <------------讨论区------------>
-    </p>
+    <h2 style="font-weight:bolder">{{comment_number}} 则评论</h2>
     <ul>
         {% for comment, time, user in comments %}
         <div class="box">
