@@ -40,7 +40,9 @@
             console.log("Time: ", "{{time}}")
         </script>
         <div class="box" onclick="navigateToLink('/discussion/view/{{id}}')">
-            <div style="font-size: 22px; display:block;">{{title}}</div><br>
+            <div style="font-size: 22px; display:block;">{% if user == "OMIGA官方" %}<i class="fa-solid fa-star"
+                    style="color:#c61a3c;"></i>{%endif %}{{title}}{% if user == "OMIGA官方" %}<div style="color:#e61818">
+                    [offcial]</div>{% endif %}</div><br>
             <div class="information">
                 时间:<div class="topic-time">{{time}}</div>用户:{{user}}
             </div>
@@ -56,7 +58,7 @@
             var topicTimeDivs = document.querySelectorAll(".topic-time");
             for (var i = 0; i < topicTimeDivs.length; i++) {
                 console.log(topicTimeDivs[i].textContent)
-                topicTimeDivs[i].textContent = new Date(topicTimeDivs[i].textContent).toLocaleString('zh-CN', { timeZone : "Asia/Shanghai"});
+                topicTimeDivs[i].textContent = new Date(topicTimeDivs[i].textContent).toLocaleString('zh-CN', { timeZone: "Asia/Shanghai" });
             }
         }
 

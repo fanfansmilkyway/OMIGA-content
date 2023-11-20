@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<head>
+    <title>查询单词</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<h1>找到以下可能的单词</h1>
+
+{% for word in possible_words %}
+<a href="/words/{{word}}" style="font-size:22px">{{word}}</a>, 
+{% endfor %}

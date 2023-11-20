@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<head>
+    <title>查看单词</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        .formatted-text {
+            white-space: pre-line;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{title}}</h1>
+    <div class="formatted-text">
+        {{content}}
+    </div>
+</body>
